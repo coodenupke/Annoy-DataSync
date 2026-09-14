@@ -1,0 +1,1 @@
+Test write access via MCP tool.
