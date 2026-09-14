@@ -1,9 +1,8 @@
 
-
 # Annoy: This should be a paper Title
 
 <p align="center">
-    📑 <a href="https://huggingface.co/papers/xxxx.xxxxx" target="_blank">Paper</a> &nbsp&nbsp | &nbsp&nbsp 🌐 <a href="https://specx.github.io/" target="_blank">Project Page</a> &nbsp&nbsp | &nbsp&nbsp 🤗 <a href="https://huggingface.co/collections/ASDASD12321WSX/specx-67a978e28fd926b56a4f55a2" target="_blank">Released Resources</a> &nbsp&nbsp | &nbsp&nbsp 💾 <a href="https://huggingface.co/datasets/ASDASD12321WSX/Annoy-PyEdu-Rs" target="_blank">Dataset</a> &nbsp&nbsp | &nbsp&nbsp 📦 <a href="https://github.com/coodenupke/Annoy-DataSync" target="_blank">Repo</a>  
+    📑 <a href="https://huggingface.co/papers/xxxx.xxxxx" target="_blank">Paper</a> &nbsp&nbsp | &nbsp&nbsp 🌐 <a href="https://specx.github.io/" target="_blank">Project Page</a> &nbsp&nbsp | &nbsp&nbsp 🤗 <a href="https://huggingface.co/collections/ASDASD12321WSX/specx-67a978e28fd926b56a4f55a2" target="_blank">Released Resources</a> &nbsp&nbsp | &nbsp&nbsp 💾 <a href="https://huggingface.co/datasets/ASDASD12321WSX/Annoy-PyEdu-Rs" target="_blank">Dataset</a> &nbsp&nbsp | &nbsp&nbsp 📦 <a href="https://github.com/coodenupke/Annoy-DataSync" target="_blank">Repo</a>
 <br>
 
 <p align="center">
@@ -45,9 +44,8 @@ Annoy-DataSync is a novel approach that transforms code-based reasoning patterns
 
 Due to our collaborators' compliance requirements, we only release the PythonEdu-Rs subset of the Annoy(++) dataset.
 
-
-
 #### Models
+
 <table>
     <tr>
         <th rowspan="2">Base Model / Training</th>
@@ -82,7 +80,6 @@ Due to our collaborators' compliance requirements, we only release the PythonEdu
         <td style="text-align: center; vertical-align: middle;"><a href="https://huggingface.co/ASDASD12321WSX/dsv2-lite-coder_spec_pp">🤗</a></td>
     </tr>
 </table>
-
 
 ## Get Started
 
@@ -130,7 +127,7 @@ python ./src/batched_api_inference.py \
 You can also use GPT series models to do this transformation step, since recently the DeepSeek API is under heavy pressure. For example, set `--model` as `gpt-4o-mini-2024-07-18​` and change `--key` accordingly.
 You may find some the requests failed, it's OK and we just skip them.
 
-*Note that we only provide the code to inference with OpenAI-style APIs. However, it is also 100\% feasible to deploy other open-source models and inference locally via frameworks like [vllm](https://github.com/vllm-project/vllm) or [sglang](https://github.com/sgl-project/sglang). Please refer to their official websites for more details.
+*Note that we only provide the code to inference with OpenAI-style APIs. However, it is also 100% feasible to deploy other open-source models and inference locally via frameworks like [vllm](https://github.com/vllm-project/vllm) or [sglang](https://github.com/sgl-project/sglang). Please refer to their official websites for more details.
 #### Step 2: Parse & Generate I/O Pairs
 ```
 python ./src/parse_gen_ios.py \
@@ -210,7 +207,17 @@ python ./src/assemble_spec_demo.py \
 By doing so, you can get data `data/spec_demo_final.jsonl` with the same format as in our [huggingface dataset](https://huggingface.co/datasets/ASDASD12321WSX/Annoy-Pyedu-Rs).
 
 ### Training
-You can use any popular training framework to train your model like [llama-factory](https://github.com/hiyouga/LLaMA-Factory). 
+You can use any popular training framework to train your model like [llama-factory](https://github.com/hiyouga/LLaMA-Factory).
 
 ## Acknowledgement
 We thank Koala NN, TCLV and OMEN for their valuable feedback and suggestions! 🤗🤗🤗
+
+## License
+
+**Annoy-PyEdu-Rs-Raw**: The raw dataset is adopted from the `python-edu` subset of `HuggingFaceTB/smollm-corpus`, which is explicitly licensed `odc-by` (Open Data Commons Attribution) in its dataset card. While the underlying source code files originate from `bigcode/the-stack-v2-train-full-ids` under the BigCode OpenRAIL-M v1 license (which includes use-based restrictions), the direct data source—the smollm-corpus python-edu subset—provides the `odc-by` license for the processed dataset structure and selection, which is the more permissive option.
+
+**Annoy-PyEdu-Rs**: The synthesized dataset was created using the DeepSeek-V2.5 API. Under the DeepSeek Open Platform Terms of Service (version 2026-04-29, section 4.2), DeepSeek assigns output rights to the user but restricts use via the Terms of Use. Between the ODC-By license from the data source (attribution-only, no use-based restrictions for derivative works) and the DeepSeek model license (which prohibits military use, harm to minors, false information to harm others, and similar categories), ODC-By is the most permissive for derivative/secondary use. The DeepSeek OpenRAIL-style restrictions apply to any subsequent use of the model (e.g., further fine-tuning), but the synthesized dataset output itself is owned by the user.
+
+Both released datasets carry the `odc-by` license.
+
+*Please note: Code samples within the dataset originate from publicly available source files under various original licenses (MIT, Apache-2.0, BSD, GPL, etc.) from The Stack v2. Users must comply with the licenses of the individual source files referenced in each data point.
